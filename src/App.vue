@@ -21,7 +21,7 @@ function out(key) {
 }
 
 function add() {
-  newcity.value.push(newcity.value)
+  cidades.value.push(newcity.value)
   newcity.value = ''
 }
 </script>
@@ -32,4 +32,6 @@ function add() {
       {{ cidade }} -- <button @click="out(key)">Delete</button>
     </li>
   </ul>
+  <input v-model="newcity" placeholder="Digite a sua cidade" maxlength="20" size="20" />
+  <button @click="add()">Adicionar</button>
 </template>
