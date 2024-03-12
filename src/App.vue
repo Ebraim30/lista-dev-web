@@ -1,7 +1,7 @@
 <script setup>
 import { ref } from 'vue'
 
-const cidadess = ref([
+const cidades = ref([
   'São Paulo',
   'Rio de Janeiro',
   'Belo Horizonte',
@@ -14,19 +14,21 @@ const cidadess = ref([
   'Brasília'
 ])
 
-function adicionar(index) {
-  cidadess.value[index].quantidade++
+const newcity = ref('')
+
+function out (key) {
+  cidades.value.splice(key, 1)
 }
 
-function novo(index) {
-  cidadess.value[index].adicionar
-}
+
+
+function
 </script>
+
 <template>
   <ul>
-    <li v-for="(cidade, index) in cidadess">
-      {{ cidade.cidades }} <button @click="adicionar(index)"></button>
-      <button @click="novo">adicionar</button>
+    <li v-for="(cidade, key) in organizado" :key="key">
+      {{ cidade }} -- <button @click="out(key)">Delete</button>
     </li>
   </ul>
 </template>
