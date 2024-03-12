@@ -16,18 +16,19 @@ const cidades = ref([
 
 const newcity = ref('')
 
-function out (key) {
+function out(key) {
   cidades.value.splice(key, 1)
 }
 
-
-
-function
+function add() {
+  newcity.value.push(newcity.value)
+  newcity.value = ''
+}
 </script>
 
 <template>
   <ul>
-    <li v-for="(cidade, key) in organizado" :key="key">
+    <li v-for="(cidade, key) in cidades" :key="key">
       {{ cidade }} -- <button @click="out(key)">Delete</button>
     </li>
   </ul>
