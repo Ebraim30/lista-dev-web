@@ -35,3 +35,6 @@ function add() {
   <input v-model="newcity" placeholder="Digite a sua cidade" maxlength="20" size="20" />
   <button @click="add()">Adicionar</button>
 </template>
+
+<style scoped>
+</style>
