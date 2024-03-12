@@ -1,5 +1,5 @@
 <script setup>
-import { ref } from 'vue'
+import { ref, computed, reactive } from 'vue'
 
 const cidades = ref([
   'São Paulo',
@@ -24,11 +24,15 @@ function add() {
   cidades.value.push(newcity.value)
   newcity.value = ''
 }
+
+const organizacao = computed(() => {
+  return cidades.value.sort()
+})
 </script>
 
 <template>
   <ul>
-    <li v-for="(cidade, key) in cidades" :key="key">
+    <li v-for="(cidade, key) in organizacao" :key="key">
       {{ cidade }} -- <button @click="out(key)">Delete</button>
     </li>
   </ul>
@@ -36,5 +40,4 @@ function add() {
   <button @click="add()">Adicionar</button>
 </template>
 
-<style scoped>
-</style>
+<style scoped></style>
