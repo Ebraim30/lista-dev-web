@@ -14,6 +14,10 @@ const cidades = ref([
   'Brasília'
 ])
 
+
+
+
+
 const newcity = ref('')
 
 function out(key) {
@@ -36,8 +40,14 @@ const organizacao = computed(() => {
       {{ cidade }} -- <button @click="out(key)">Delete</button>
     </li>
   </ul>
+  <div>
   <input v-model="newcity" placeholder="Digite a sua cidade" maxlength="20" size="20" />
   <button @click="add()">Adicionar</button>
-</template>
+  </div>
+  </template>
 
-<style scoped></style>
+<style scoped>
+
+
+</style>
+
